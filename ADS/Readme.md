@@ -7,8 +7,11 @@ Topics Covered:
 2.Array
 
 3.Searching 
+
   -Linear Search
+  
   -Binary Search
   
 4.Stack
+
   -Stack Applications
