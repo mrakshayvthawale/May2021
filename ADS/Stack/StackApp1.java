@@ -1,82 +1,77 @@
-import java.util.*;
-
-class StackDemo
+class Stack
 {
-	private int size;
 	private int S[];
+	private int size;
 	private int top;
 	
-	public StackDemo(int s)
+	public Stack(int s)
 	{
-		size =s;
+		size = s;
 		S = new int[size];
-		top=-1;
+		top =-1;
 	}
 	
 	public void push(int j)
 	{
-		S[++top]=j;
+		S[++top] = j;
 	}
 	
-	public int pop()
-	{
-		return S[top--];
-	}
-	public int peek()
-	{
-		return S[top];
-	}
-	public boolean isEmpty()
-	{
-		return (top == -1);
-	}
-	public boolean isFull()
-	{
-		return (top==size-1);
-	}
-	public void display()
-	{
-		for(int i=0;i<size;i++)
-			System.out.print(S[i]+" ");
-	}
+	 public int pop()
+	 {
+		 return S[top--];
+	 }
+	 
+	 public int peek()
+	 {
+		 return S[top];
+	 }
+	 
+	 public boolean isEmpty()
+	 {
+		 return (top == -1);//Underflow
+	 }
+	 
+	 public boolean isFull()
+	 {
+		 return (top == size-1);//Overflow
+	 }
+	 
+	 public void display()
+	 {
+		 for(int i=0;i<size;i++)
+			 System.out.println(S[i]);
+	 }
+	 
 	
 }
-public class StackApp1 {
-public static void main(String args[])
+
+class StackApp1
 {
+	public static void reverse(StringBuffer str)
+	{
+		int n=str.length();
+		Stack s1 = new Stack(n);
+		int i;
+		for(i=0;i<n;i++)
+			s1.push(str.charAt(i));
+		
+		for(i=0;i<n;i++)
+		{
+			char ch=(char)s1.pop();
+			str.setCharAt(i,ch);
+		}
+		
+	}
+	public static void main(String args[])
+	{
 	
-	StackDemo s=new StackDemo(5);
-	Scanner in= new Scanner(System.in);
+		StringBuffer s = new StringBuffer("MAHESH AND RAHUL");
+		reverse(s);
+		
+		System.out.println("Reverse String   :  "+s);
+		
+		
+		
+	}
 	
-	 do
-		{System.out.println("\n******** MENU *******");
-		 System.out.println("\n1.PUSH");
-		 System.out.println("\n2.POP");
-		 System.out.println("\n3.PEEK");
-		 System.out.println("\n4 IS EMPTY");
-		 System.out.println("\n5.EXIT");
-		 System.out.println("\n enter ur choice : ");
-		 switch(in.nextInt())
-			{
-			 case 1: 
-				 System.out.println("\nenter the value ");
-				 s.push(in.nextInt());
-				 break;
-			 case 2: 
-				System.out.println("\n popped element : "+ s.pop());
-				 break;
-			 
-			case 3: 
-				System.out.println("\n top element : "+ s.peek());
-				 break;
-			 case 4: System.out.println("\n is empty : "+ s.isEmpty());
-					 break;
-			 case 5: System.exit(0);
-					 break;
-			 default: System.out.println("\n Wrong Choice!");
-					  break;
-			}
-		 System.out.println("\n do u want to cont... ");
-		}while(in.nextInt()==1);
-}
 }
