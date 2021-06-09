@@ -1,4 +1,6 @@
-class List3
+//Insert and Delete operation in Linked List.
+
+class List4
 {
 Node head;//Start of list
 
@@ -62,10 +64,32 @@ static class Node
 	  
 		  
   }
+  void deleteNode(int key)
+	{
+		Node temp = head, prev = null;
+		if(temp != null && temp.data == key)
+		{
+			head = temp.next;
+		return;
+		}
+		while ( temp !=null && temp.data != key)
+		{
+			prev = temp;
+			temp = temp.next;
+		}
+		if(temp == null)
+			return;
+		prev.next=temp.next;
+	}
+	 public void deletelist()
+	 {
+		 head =null;
+	 }
+	 
 
 public static void main(String args[])
 {
-	List3 l1 = new List3();
+	List4 l1 = new List4();
 	
 	l1.head = new Node(11);
 	Node second  = new Node(22);
@@ -85,10 +109,23 @@ public static void main(String args[])
 	l1.display();
 	l1.append(83);
 	System.out.println("...........");
+	System.out.println();
 	l1.display();
 	
 	l1.insertAfter(l1.head.next, 65);
+	System.out.println();
+	l1.display();
 	
+	l1.deleteNode(44);
+	System.out.println();
+	l1.display();
+	
+	l1.deleteNode(33);
+	System.out.println();
+	l1.display();
+	
+	l1.deleteNode(83);
+	System.out.println();
 	l1.display();
 	
 	
