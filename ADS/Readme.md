@@ -19,3 +19,5 @@ Topics Covered:
 5.Queue
   
   -Circular Queue
+  
+6. Linked List
