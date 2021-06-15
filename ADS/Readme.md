@@ -21,3 +21,23 @@ Topics Covered:
   -Circular Queue
   
 6. Linked List
+
+8. Doubly Linked List
+
+9. Trees
+
+10. Sorting Algorithms
+
+  Bubble Sort
+  Selection Sort
+  Insertion Sort
+  Merge Sort
+  Quick Sort
+  Heap Sort
+  
+11. Analysis of Algorithms
+
+  Time Complexity
+  
+  Space Complexity
+  
